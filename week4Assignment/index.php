@@ -11,7 +11,7 @@
 	$date = date('Y/m/d',time());
 	echo "<br><br>(2) \$date with - replaced with: ".$date."<br>";
 	//Number 3
-	echo "<br>(3) \$date compared to $tar: ";
+	echo "<br>(3) \$date compared to \$tar: ";
 	if(strcmp($date,$tar) >0){
 		echo " the future";
 	}elseif (strcmp($date,$tar) <0){
