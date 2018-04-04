@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Ashaar's Sign Up Page</title>
+   </head>
+	
+   <style>
+      form{
+         line-height: 50px;
+         text-align: center; 
+/*         border: 3px solid black;*/
+      }
+      h1{
+         text-align: center;
+      }
+      body{
+         background-color: #93FEBF;
+      }
+
+      main{
+         width: 500px;
+         font-family: Arial, Helvetica, sans-serif;
+         font-size: 100%;
+         margin: 0px auto;
+         border: 3px solid #4BAAF0;
+         border-radius: 30px;
+         background-color: #FEA493;
+      }
+      header{
+         font-size: 100%;
+         padding-top: 1.5em;
+         margin: 0px auto;
+      }
+      header{
+         border-bottom: 3px solid #4BAAF0;
+      }
+      input[type=text]{
+         padding: 5px;
+      }
+      input[type=button]{
+         background-color: black;
+         color: white;
+      }
+
+   </style>
+
+
+   <body>
+      <main>
+         <header>
+            <h1>Ashaar's Sign Up Page</h1>
+         </header>
+         <form >
+            First Name: <input type = "text" name = "firstname" placeholder="John" /><br>
+            Last Name: <input type = "text" name = "lastname" placeholder="Doe" /><br>
+            Email: <input type = "text" name = "email" placeholder="johndoe@abc.com" /><br>
+            Phone: <input type = "text" name = "phone" placeholder="XXX-XXX-XXXX" /><br>
+            Birthday: <input type="text" name="birthday" placeholder="MM-DD-YYYY" /><br>
+            Gender: <input type = "radio" name = "gender" value = "male"> Male
+            <input type="radio" name="gender" value="female"> Female<br>
+            <input type="button" name="submit" id="submit" value="Submit"> 
+         </form>
+      </main>
+   </body>
+	
+</html>
