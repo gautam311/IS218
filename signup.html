@@ -52,16 +52,58 @@
             <h1>Ashaar's Sign Up Page</h1>
          </header>
          <form >
-            First Name: <input type = "text" name = "firstname" placeholder="John" /><br>
-            Last Name: <input type = "text" name = "lastname" placeholder="Doe" /><br>
-            Email: <input type = "text" name = "email" placeholder="johndoe@abc.com" /><br>
-            Phone: <input type = "text" name = "phone" placeholder="XXX-XXX-XXXX" /><br>
-            Birthday: <input type="text" name="birthday" placeholder="MM-DD-YYYY" /><br>
-            Gender: <input type = "radio" name = "gender" value = "male"> Male
-            <input type="radio" name="gender" value="female"> Female<br>
-            <input type="button" name="submit" id="submit" value="Submit"> 
+           
+            Email: <input id="email" type = "text" name = "email" placeholder="johndoe@abc.com" /><br>
+            Password: <input id="password" type = "password" name = "password" placeholder="password" /><br>
+            <input type="button" name="submit" id="submit" onClick="verify()" value="Submit"> 
+            <p id='result'/>
          </form>
       </main>
    </body>
+
+<script type="text/javascript">
+	function verify()
+	{
+		var email = document.getElementById('email').value;
+		var password = document.getElementById('password').value;
+
+		if(email=='' || password==''){
+			alert("You are missing either email or password")
+			return false;
+		}
 	
+		var data = {
+	  		'email': email,
+	  		'password': password
+	 	}
+
+
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function() 
+		{
+			if(xhr.readyState === 4)
+			{
+				var ourData = xhr.responseText;
+				console.log('ourData: ' + ourData);
+            var parsedData = JSON.parse(ourData);
+            console.log(parsedData);
+            
+	    		if(parsedData == "success")
+	    		{
+	    			location.href = "todo.html";
+	    		}
+	    		else
+	    		{
+	    			document.getElementById('result').innerHTML = "Invalid credentials!";
+	    		}	
+		 			 		
+		 	}
+			
+		};
+		xhr.open("POST", "login.php", true);
+		xhr.send(JSON.stringify(data));
+	}
+
+
+</script>
 </html>
